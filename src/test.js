@@ -6,7 +6,7 @@ const child_process = require('child_process');
 const { checkConfig, checkResult } = require('./utils');
 
 module.exports = (testfile) => {
-  let config
+  let config;
   if (!testfile.endsWith('.yaml')) {
     testfile += '.yaml';
   }

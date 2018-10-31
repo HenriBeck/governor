@@ -13,9 +13,9 @@ const checkConfig = config => {
 const checkResult = (test, result) => {
   if (test.output) {
     if (!result.includes(test.output)) {
-      console.log('Failed!');
-      console.log(`Expected: ${test.output}`);
-      console.log(`Output:   ${result}`);
+      console.log(`Failed Test: ${test.name || 'unnamed'}`);
+      console.log(`Expected:    ${test.output}`);
+      console.log(`Output:      ${result}`);
       return 1;
     }
   }
