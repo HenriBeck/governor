@@ -19,7 +19,7 @@ tests:
   - name: Is prime 2
     args: 2 =
     output: 2 is a prime
-  - name: Is prime 2
+  - name: Is not prime 4
     args: 4 =
     output: 4 is not a prime
 ```
