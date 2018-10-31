@@ -1,0 +1,16 @@
+{
+  "name": "governor",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:jpJuni0r/governor.git",
+  "author": "Jan-Philipp Ottmüller <j.ottmueller@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/app"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "fs": "^0.0.1-security",
+    "js-yaml": "^3.12.0"
+  }
+}
