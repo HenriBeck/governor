@@ -5,7 +5,7 @@ const runTest = require('./test');
 let arguementsMissing = true;
 
 program
-  .version(JSON.parse(fs.readFileSync(`${__dirname}/../package.json`, 'utf8')).version)
+  .version('0.0.1')
   .arguments('<testfile>')
   .action((testfile) => {
     if (testfile) {
