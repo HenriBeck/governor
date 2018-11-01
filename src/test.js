@@ -25,13 +25,10 @@ module.exports = (testfile) => {
   const testsFailed = config.tests.map((test, index) => {
     let args = test.args ? ` ${test.args}` : '';
 
-    console.log(`Running Test #${index}`);
-    let result;
-    try {
-      result = child_process.execSync(binaryPath + args);
-    } catch (e) {
-      result = e.stderr;
-    }
+    console.log(`Running Test #${index + 1}`);
+    const instance = child_process.spawnSync(binaryPath, args.trim().split(' '));
+    let result = instance.stderr.toString() !== '' ? instance.stderr.toString() : instance.stdout.toString();
+    result = result.trim();
 
     return checkResult(test, result);
   }).reduce((acc, current) => acc + current, 0);
