@@ -26,7 +26,12 @@ module.exports = (testfile) => {
     let args = test.args ? ` ${test.args}` : '';
 
     console.log(`Running Test #${index}`);
-    const result = child_process.execSync(binaryPath + args);
+    let result;
+    try {
+      result = child_process.execSync(binaryPath + args);
+    } catch (e) {
+      result = e.stderr;
+    }
 
     return checkResult(test, result);
   }).reduce((acc, current) => acc + current, 0);
